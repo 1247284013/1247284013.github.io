@@ -1,0 +1,1392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="src/icon1.png">
+    <title>ZHANG YANJIE</title>
+    <link rel="stylesheet" href="css/mypage.css">
+    <link rel="stylesheet" href="css/project-section.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        .glow {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 20px;
+            height: 20px;
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        .glow-inner {
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(124, 130, 255, 0.8) 0%, rgba(255, 255, 255, 0) 70%);
+            animation: glow-animation 2s linear infinite;
+        }
+
+        @keyframes glow-animation {
+            0% {
+                transform: scale(0.5);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(2);
+                opacity: 0;
+            }
+        }
+
+        *{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border:none;
+    outline:none;
+    scroll-behavior: smooth;
+    font-family: 'Gill Sans', 'Gill Sans MT','Calibri', 'Trebuchet MS', 'sans-serif';
+}
+:root{
+    --bg-color:#0C0320;
+    --second-bg-color:#1d1137;
+    --text-color:#fff;
+    --main-color:#6e75fd;
+
+}
+html{
+    font-size: 62.5%;
+    overflow-x:hidden;
+    scroll-behavior:smooth;
+}
+body{
+    background-color: #0C0320;
+    color:#1d1137;
+    overflow: hidden;
+}
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    padding:2rem 9%;
+    width: 100%;
+    background-color: transparent;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    transition: .3s;
+}
+.header.sticky{
+    background: rgba(23, 11, 56, 0.2);
+    backdrop-filter: blur(20px);
+   
+}
+.logo{
+    position: relative;
+    font-size: 2.5rem;
+    color: #fff;
+    font-weight: 600;
+    margin-left: 0;
+}
+.navbar{
+    position: relative;
+}
+.navbar a{
+    font-size: 1.7rem;
+    color:var(--text-color);
+    font-weight: 500;
+    margin-left: 3.5rem;
+    transition: .3s;
+}
+.navbar a:hover,
+.navbar a.active{
+    color:var(--main-color);
+}
+#menu-icon{
+    position: relative;
+    font-size: 3.6rem;
+    color:var(--text-color);
+    cursor:pointer;
+    display: none;;
+}
+#menu-icon:hover{
+    color:var(--main-color);
+}
+section{
+    min-height: 100vh;
+    padding: 10rem 9% 2rem;
+}
+p{
+    color: #fff;
+}
+
+h3{
+    color: #fff;
+}
+.home{
+    display: flex;
+    align-items:center;
+    padding:0 9%;
+    background:url('/src/home.png') no-repeat ;
+    background-size: cover;
+    background-position: center;
+}
+.home-content{
+    max-width: 60rem;
+    z-index:99;
+}
+.home-content h1{
+    position: relative;
+    display: inline-block;
+    font-size: 6rem;
+    font-weight:700;
+    line-height: 1.3;
+    color:var(--main-color);
+    letter-spacing: 5px;
+    
+}
+
+
+.home-content .text-animate{
+    position:relative;
+    width:41rem;
+}
+.home-content .text-animate h3{
+    font-size: 3.2rem;
+    color:transparent;
+    font-weight: 700;
+    -webkit-text-stroke: .7px var(--main-color);
+    background-image: linear-gradient(var(--main-color),var(--main-color));
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    background-position: -41rem 0;
+    animation: homeBgText 6s linear infinite;
+    animation-delay: 2s;
+}
+
+.home-content .text-animate h3::before{
+    content:'';
+    position: absolute;
+    top:0;
+    left:0;
+    width:0;
+    height:100%;
+    border-right:2px solid var(--main-color);
+    z-index: -1;
+    animation: homeCursorText 6s linear infinite;
+    animation-delay: 2s;
+
+}
+
+.home-content h1 span{
+    transition:0.3s;
+}
+.home-content h1:hover span:nth-child(1){
+    margin-left:15px;
+}
+.home-content h1:hover span:nth-child(1):after{
+    content:"'";
+}
+.home-content h1:hover span:nth-child(2){
+    margin-left:45px;
+}
+.home-content h1:hover span{
+    color: #ffffff;
+    text-shadow: 0 0 10px #8a76ff,
+                 0 0 20px #8a76ff,
+                 0 0 40px #8a76ff,
+                 0 0 80px #8a76ff,
+                 0 0 120px #8a76ff,
+                 0 0 160px #8a76ff;
+}
+.home-content p{
+    position: relative;
+    font-size: 1.6rem;
+    margin:2rem 0 4rem;
+    color: #ffffff;
+}
+.btn-box{
+    position:relative;
+    display:flex;
+    justify-content:space-between;
+    width:34.5rem;
+    height:5rem;
+    border:.2rem;
+}
+.btn-box .btn{
+    position:relative;
+    display:inline-flex;
+    justify-content: center;
+    align-items: center;
+    width:15rem;
+    height: 100%;
+    background-color: var(--main-color);
+    border:.2rem solid  var(--main-color);
+    border-radius:.8rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    color: var(--bg-color);
+    z-index:1;
+    overflow: hidden;
+    transition: .5s;
+}
+.btn-box .btn:hover{
+    color: var(--main-color);
+}
+.btn-box .btn:nth-child(2){
+    background: transparent;
+    color: var(--main-color);
+}
+.btn-box .btn:nth-child(2):hover{
+    color: var(--bg-color);
+}
+.btn-box .btn:nth-child(2)::before{
+    background:var(--main-color);
+
+}
+.btn-box .btn::before{
+    content:'';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background:var(--bg-color);
+    z-index: -1;
+    transition: .5s;
+}
+.btn-box .btn:hover::before{
+    width:100%;
+}
+
+.home-sci{
+    position: absolute;
+    bottom: 4rem;
+    width: 170px;
+    display: flex;
+    justify-content: space-between;
+}
+.home-sci a{
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: .2rem solid var(--main-color);
+    border-radius: 50%;
+    font-size: 20px;
+    color: var(--main-color);
+    z-index: 1;
+    overflow: hidden;
+}
+.home-sci a:hover{
+    color: var(--bg-color);
+}
+.home-sci a::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--main-color);
+    z-index: -1;
+    transition: .5s;
+
+}
+.home-sci a:hover::before{
+    width: 100%;
+}
+.home-imgHover{
+    position: absolute;
+    top:0;
+    right:0;
+    width:45%;
+    height:100%;
+    background: transparent;
+    transition: 3s;
+    
+}
+.home-imgHover:hover{
+    background: var(--bg-color);
+    opacity: .7;
+    
+}
+.about{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap:2rem;
+    background-color: var(--second-bg-color);
+    padding-bottom: 6rem;
+}
+.heading{
+    position: relative;
+    font-size: 5rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    color: #fff;
+}
+span{
+    color:var(--main-color);
+
+}
+
+.about-img{
+    position: relative;
+    width: 25rem;
+    height: 25rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 30px 5px var(--main-color);
+}
+.about-svg1{
+    position: absolute;
+    top: 1260px;
+    left: 35%;
+    transform: translate(-50%, -50%);
+    transform: rotate(20edge);
+    animation: pulse 2s infinite;
+
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1.4;
+    }
+    50% {
+        transform: scale(0.7);
+        opacity: 0.7;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1.4;
+    }
+}
+.about-svg2{
+    position: absolute;
+    top: 1070px;
+    left: 60%;
+    transform: translate(-50%, -50%) scale(0.5);
+    animation: pulse-2 2s infinite;
+}
+@keyframes pulse-2 {
+    0% {
+        transform: scale(0.8);
+        opacity: 0.4;
+    }
+    50% {
+        transform: scale(0.5);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0.8);
+        opacity: 0.4;
+    }
+}
+.about-svg3{
+    position: absolute;
+    top: 1280px;
+    left: 64%;
+    transform: translate(-50%, -50%) rotate(70deg); /* Updated rotate(40deg) */
+    animation: pulse-3 2s infinite;
+}
+@keyframes pulse-3 {
+    0% {
+        transform: scale(1.0);
+        opacity: 0.6;
+    }
+    50% {
+        transform: scale(0.7);
+        opacity: 1.2;
+    }
+    100% {
+        transform: scale(1.0);
+        opacity: 0.6;
+    }
+}
+.label-me{
+    position: absolute;
+    top: 1060px;
+    left: 24%;   
+}
+.label-mbti{
+    position: absolute;
+    top: 1160px;
+    left: 64%;   
+}
+
+.about-img img{
+    width:90%;
+    border-radius: 50%;
+    border:.3rem solid var(--main-color);
+}
+.about-img .circle-spin{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%,-50%) rotate(0);
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border-top: .3rem solid var(--second-bg-color);
+    border-bottom: .3rem solid var(--second-bg-color);
+    border-left: .3rem solid var(--main-color);
+    border-right: .3rem solid var(--main-color);
+    animation: aboutSpinner 8s linear infinite;
+    
+}
+.about-content{
+    text-align:center;
+}
+.about-content h3{
+    position: relative;
+    display: inline-block;
+    font-size: 2.6rem;
+    
+}
+.about-content p{
+    position: relative;
+    font-size: 1.6rem;
+    margin:2rem 0 3rem;
+}
+.btn-box.btns{
+    display:inline-block;
+    width: 15rem;
+}
+.btn-box.btns a::before{
+    background-color: var(--second-bg-color);
+}
+
+.education{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: auto;
+    padding-bottom: 5rem;
+}
+
+.education .education-row{
+    display: flex;
+    flex-wrap: wrap;
+    gap:5rem;
+}
+
+.education-row .education-column{
+    flex:1 1 40rem;
+}
+
+.education-colum .title{
+    position: relative;
+    display: inline-block;
+    font-size: 2.5rem;
+    margin: 0 0 1.5rem 2rem;
+}
+
+.education-column .education-box{
+    position: relative;
+    border-left: .2rem solid var(--main-color);
+}
+
+.education-box .education-content{
+    position:relative;
+    padding-left: 2rem;
+}
+
+.education-box .education-content::before{
+    content:'';
+    position:absolute;
+    top:0;
+    left: -1.1rem;
+    width: 2rem;
+    height: 2rem;
+    background: var(--main-color);
+    border-radius: 50%;
+}
+.education-content .content{
+    position:relative;
+    padding:1.5rem;
+    border:.2rem solid var(--main-color);
+    border-radius:.6rem;
+    margin-bottom: 2rem;
+    overflow: hidden;
+
+}
+.education-content .content::before{
+   content: '';
+   position: absolute;
+   top:0;
+   left:0;
+   width: 0;
+   height: 100%;
+   background: var(--second-bg-color);
+   z-index: -1;
+   transition: .5s;
+}
+.education-content .content:hover::before{
+    width: 100%;
+}
+
+
+.education-content .content .year{
+    font-size:1.5rem;
+    color:var(--main-color);
+    padding-bottom: .5rem;
+}
+
+.education-content .content .year i{
+    padding-right: .5rem;
+}
+.education-content .content h3{
+    font-size: 2rem;
+}
+.education-content .content p{
+    font-size:1.6rem;
+    padding-top: .5rem;
+
+}
+.title{
+    font-size: 2rem;
+    padding-bottom: 1.2rem;
+ }
+.skills{
+    min-height: auto;
+    padding-bottom: 7rem;
+    background: var(--second-bg-color);
+}
+.skills .skills-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:5rem;
+}
+
+
+.skills-row .skills-column{
+    flex:1 1 40rem;
+}
+
+.skills-column .title{
+    font-size: 2.5rem;
+    margin: 0 0 1.5rem;
+}
+
+.skills-box .skills-content{
+    position:relative;
+    border:.2rem solid var(--main-color);
+    border-radius:.6rem;
+    padding:.5rem 1.5rem;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.skills-box .skills-content::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left:0;
+    width: 0;
+    height: 100%;
+    background:var(--bg-color);
+    z-index: -1;
+    transition: .5s;
+}
+
+.skills-box .skills-content:hover::before{
+    width: 100%;
+}
+
+
+.skills-content .progress{
+    padding:1rem 0;
+}
+.skills-content .progress h3{
+    font-size: 1.7rem;
+    display:flex;
+    justify-content:space-between;
+}
+.skills-content .progress h3 span{
+    color:var(--text-color);
+}
+.skills-content .progress .bar{
+    height:2.5rem;
+    border-radius:.6rem;
+    border:.2rem solid var(--main-color);
+    padding: .5rem;
+    margin:1rem 0;
+}
+.skills-content .progress .bar span{
+    display: block;
+    height: 100%;
+    border-radius: .3rem;
+    background: var(--main-color);
+}
+
+.skills-column:nth-child(1) .skills-content .progress:nth-child(1) .bar span{
+    width: 90%;
+}
+.skills-column:nth-child(1) .skills-content .progress:nth-child(2) .bar span{
+    width: 88%;
+}
+.skills-column:nth-child(1) .skills-content .progress:nth-child(3) .bar span{
+    width: 85%;
+}
+.skills-column:nth-child(1) .skills-content .progress:nth-child(4) .bar span{
+    width: 85%;
+}
+.skills-column:nth-child(1) .skills-content .progress:nth-child(5) .bar span{
+    width: 80%;
+}
+
+.skills-column:nth-child(2) .skills-content .progress:nth-child(1) .bar span{
+    width: 80%;
+}
+.skills-column:nth-child(2) .skills-content .progress:nth-child(2) .bar span{
+    width: 76%;
+}
+.skills-column:nth-child(2) .skills-content .progress:nth-child(3) .bar span{
+    width: 65%;
+}
+.skills-column:nth-child(2) .skills-content .progress:nth-child(4) .bar span{
+    width: 73%;
+}
+.skills-column:nth-child(2) .skills-content .progress:nth-child(5) .bar span{
+    width: 70%;
+}
+.project{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding: 80px 60px;
+    color: white;
+    margin-bottom: 50px;
+}
+.project-15{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding: 80px 60px;
+    color: white;
+    margin-bottom: 50px;
+
+}
+
+
+.project-works{
+    margin-top: -150px;
+    color: white;
+    /* margin-bottom: ; */
+}
+
+.container{
+    position: relative;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.main-title{
+    font-size:4em;
+    margin-bottom: 50px;
+}
+
+.content-proj{
+    position: relative;
+    width: 1150px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-proj .image{
+    position: relative;
+    width: 880px;
+    height: 400px;
+    overflow: hidden;
+}
+
+.content-proj .image img{
+    z-index: 111;
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.content-proj .text-box{
+    z-index: 222;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(20px);
+    padding: 40px;
+    max-width: 400px;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 10px;
+    transform: translate(-80px,50px);
+}
+.content-proj .text-box h3{
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.media-icons{
+    margin-top: 100px;
+}
+
+.media-icons a{
+    color:var(--main-color);
+    font-size: 3em;
+    margin:60px;
+}
+
+.section-title{
+    font-size: 3.6em;
+    margin-bottom: 80px;
+}
+
+.info-title{
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.info{
+    width: 700px;
+    margin-left: 150px;
+    /* z-index: 222;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(20px);
+    padding: 40px;
+    max-width: 400px;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 10px;
+    transform: translate(-80px,50px); */
+}
+
+.media-info{
+    width:400px;
+    margin-left: 50px;
+    
+}
+
+.media-info li{
+    list-style: none;
+    font-size: 2.4em;
+}
+
+.media-info li a{
+    color:#fff;
+    text-decoration: none;
+}
+
+.media-info li:not(:last-child){
+    margin-bottom:50px;
+}
+
+.media-info li:nth-child(1), .media-info li:nth-child(5){
+    padding-left: 100px;
+}
+.media-info li:nth-child(2), .media-info li:nth-child(4){
+    padding-left: 50px;
+}
+
+.project-15{
+    margin-bottom: 50px;
+}
+
+.card{
+    width: 80px;
+    height:360px;
+    border-radius:20px;
+    background-size: cover;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 2rem;
+    margin: 0 10px;
+    display: flex;
+    align-items: flex-end;
+    transition: .6s cubic-bezier(.28,-0.03,0,.99);
+    box-shadow: 0px 10px 30px -5px rgba(149, 119, 255, 0.4);
+}
+
+.card > .row{
+    color:rgb(255, 255, 255);
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.card > .row > .icon{
+    background: #223;
+    color: white;
+    border-radius: 50%;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+}
+
+.card > .row > .description{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+    height: 80px;
+    width: 520px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition-delay: .3s;
+    transition: all .3s ease;
+}
+
+.description p{
+    color: #b0b0ba;
+    padding-top: 5px;
+}
+
+.description h4{
+    text-transform: uppercase;
+}
+
+input{
+    display: none;
+}
+
+input:checked + label{
+    width: 600px;
+}
+
+input:checked + label .description{
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+.card[for="c1"]{
+    background-image:url('../src/img1.png');
+}
+.card[for="c2"]{
+    background-image:url('../src/img2.png');
+}
+.card[for="c3"]{
+    background-image:url('../src/img3.png');
+}
+.card[for="c4"]{
+    background-image:url('../src/img4.png');
+}
+.card[for="c5"]{
+    background-image:url('../src/img5.png');
+}
+
+
+.small-title{
+    color: #fff;
+    font-size: 2em;
+    font-weight: 500;
+}
+
+
+    </style>
+    <script src="https://unpkg.com/scrollreveal"></script>
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo">Zhang.<span class="animate" style="--i:1;"></span></a>
+        <div class="bx bx-menu" id="menu-icon"><span class="animate" style="--i:2;"></span></div>
+        <nav class="navbar">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#education">Education</a>
+            <a href="#skills">Skills</a>
+            <a href="#project">Project</a>
+
+            <span class="active-nav"></span>
+            <span class="animate" style="--i:2;"></span>
+        </nav>
+    </header>
+    <!-- home section design -->
+    <section class="home show-animate" id="home">
+        <div class="home-content">
+            <h1><span>I</span>M<span>POSSIBLE</span><span class="animate" style="--i:3;"></span></h1>
+            <div class="text-animate">
+                <h3>Welcome to my channel!<span class="animate" style="--i:4;"></span></h3>
+            </div>
+            <p>Hello! This is Yanjie Zhang's personal homepage, 
+                where I have recorded my personal details,
+                 including education experience, skills, 
+                 and my personal design work and project experience, etc. 
+                 Welcome to criticize and correct my visitors!<span class="animate" style="--i:5;"></span>
+            </p>
+            <div class="btn-box">
+                <a href="#" class="btn">Hire Me</a>
+                <a href="#" class="btn">Let's talk</a>
+                <span class="animate" style="--i:6;"></span>
+            </div>
+        </div>
+
+        <div class="home-sci">
+            <a href="#"><i class='bx bxl-facebook-square'></i></a>
+            <a href="#"><i class='bx bxl-instagram-alt'></i></a>
+            <a href="#"><i class='bx bxl-twitter'></i></a>
+            <span class="animate" style="--i:7;"></span>
+        </div>
+
+        <div class="home-imgHover"><span class="animate-other" style="--i:8;"></span></div>
+       
+    </section>
+    <div id="back"></div>
+     <!-- about section design -->
+    <section class="about" id="about">
+        <h2 class="heading">About<span> Me</span></h2>
+        <div class="about-img">
+            <img src="src/WechatIMG3572.jpg" alt="">
+            <span class="circle-spin"></span>
+        </div>
+    
+        <svg class="about-svg1" width="44" height="42" viewBox="0 0 44 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20.0979 1.8541C20.6966 0.0114814 23.3034 0.0114792 23.9021 1.8541L27.6129 13.2746C27.8806 14.0986 28.6485 14.6565 29.515 14.6565H41.5232C43.4606 14.6565 44.2662 17.1358 42.6987 18.2746L32.9839 25.3328C32.2829 25.8421 31.9896 26.7448 32.2574 27.5689L35.9681 38.9894C36.5668 40.832 34.4578 42.3642 32.8904 41.2254L23.1756 34.1672C22.4746 33.6579 21.5254 33.6579 20.8244 34.1672L11.1096 41.2254C9.54217 42.3642 7.43321 40.832 8.03191 38.9894L11.7426 27.5689C12.0104 26.7448 11.7171 25.8421 11.0161 25.3328L1.30127 18.2746C-0.266155 17.1358 0.539393 14.6565 2.47684 14.6565H14.485C15.3515 14.6565 16.1194 14.0986 16.3871 13.2746L20.0979 1.8541Z" fill="#8D91FF"/>
+        </svg>
+        <svg class="about-svg2" width="75" height="72" viewBox="0 0 75 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M35.5979 1.8541C36.1966 0.0114789 38.8034 0.0114816 39.4021 1.8541L46.8173 24.6758C47.0851 25.4998 47.853 26.0578 48.7194 26.0578L72.7156 26.0578C74.653 26.0578 75.4586 28.537 73.8912 29.6758L54.4779 43.7804C53.7769 44.2897 53.4836 45.1924 53.7513 46.0164L61.1665 68.8381C61.7652 70.6808 59.6563 72.213 58.0889 71.0742L38.6756 56.9696C37.9746 56.4603 37.0254 56.4603 36.3244 56.9696L16.9111 71.0742C15.3437 72.213 13.2348 70.6808 13.8335 68.8381L21.2487 46.0164C21.5164 45.1924 21.2231 44.2897 20.5221 43.7804L1.10883 29.6758C-0.458593 28.537 0.34696 26.0578 2.28441 26.0578L26.2806 26.0578C27.147 26.0578 27.9149 25.4998 28.1827 24.6758L35.5979 1.8541Z" fill="#8D91FF"/>
+        </svg>
+        <svg class="about-svg3" width="85" height="81" viewBox="0 0 85 81" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M40.5979 1.85411C41.1966 0.0114846 43.8034 0.0114811 44.4021 1.8541L52.9399 28.1307C53.2076 28.9548 53.9756 29.5127 54.842 29.5127H82.4709C84.4083 29.5127 85.2139 31.9919 83.6464 33.1307L61.2942 49.3705C60.5932 49.8798 60.2999 50.7826 60.5677 51.6066L69.1055 77.8832C69.7042 79.7258 67.5952 81.2581 66.0278 80.1193L43.6756 63.8795C42.9746 63.3702 42.0254 63.3702 41.3244 63.8795L18.9722 80.1193C17.4048 81.2581 15.2958 79.7258 15.8945 77.8832L24.4323 51.6066C24.7001 50.7826 24.4067 49.8798 23.7058 49.3705L1.35356 33.1307C-0.213871 31.9919 0.591681 29.5127 2.52913 29.5127H30.158C31.0244 29.5127 31.7924 28.9548 32.0601 28.1307L40.5979 1.85411Z" fill="#8D91FF"/>
+        </svg>
+        <svg class="label-me" width="168" height="136" viewBox="0 0 168 136" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M168 131L158.735 124.108L157.399 135.577L168 131ZM147.384 127.471L147.135 128.439L147.384 127.471ZM130.516 116.883L131.275 116.232L131.275 116.232L130.516 116.883ZM128.641 93.5892L127.762 93.1134L127.762 93.1134L128.641 93.5892ZM140.512 106.295L139.91 105.496L140.512 106.295ZM120.989 79.705L121.684 80.4233L121.684 80.4233L120.989 79.705ZM82.3732 66.2935L81.4846 66.7523L82.3732 66.2935ZM140.749 90.2188L140.093 90.9736L140.749 90.2188ZM144.306 97.9647L143.306 97.9339L144.306 97.9647ZM159.232 128.973C155.152 128.264 150.776 127.31 147.633 126.502L147.135 128.439C150.331 129.26 154.759 130.226 158.89 130.944L159.232 128.973ZM147.633 126.502C139.641 124.448 134.809 120.355 131.275 116.232L129.756 117.533C133.482 121.881 138.647 126.258 147.135 128.439L147.633 126.502ZM131.275 116.232C130.525 115.357 128.449 112.842 127.376 109.043C126.312 105.275 126.215 100.178 129.521 94.0649L127.762 93.1134C124.196 99.7059 124.253 105.342 125.452 109.587C126.642 113.801 128.939 116.58 129.756 117.533L131.275 116.232ZM129.521 94.0649C131.468 90.4654 133.442 89.2193 135.1 89.0107C136.8 88.797 138.536 89.6207 140.093 90.9736L141.405 89.464C139.658 87.9462 137.367 86.7099 134.851 87.0264C132.294 87.348 129.866 89.2224 127.762 93.1134L129.521 94.0649ZM143.306 97.9339C143.206 101.201 141.742 104.116 139.91 105.496L141.113 107.094C143.528 105.274 145.19 101.733 145.305 97.9955L143.306 97.9339ZM139.91 105.496C139.657 105.686 139.046 105.918 137.978 106.058C136.953 106.191 135.64 106.224 134.116 106.127C131.071 105.934 127.272 105.232 123.409 103.879C115.65 101.163 107.873 95.9156 105.195 87.1766L103.283 87.7625C106.228 97.376 114.712 102.953 122.748 105.767C126.781 107.18 130.761 107.919 133.99 108.123C135.603 108.226 137.051 108.196 138.237 108.041C139.38 107.892 140.428 107.609 141.113 107.094L139.91 105.496ZM105.195 87.1766C102.514 78.4252 105.927 69.5981 111.006 63.7745C113.542 60.8663 116.433 58.781 119.071 57.8385C121.711 56.8955 123.92 57.1393 125.419 58.5513L126.79 57.0952C124.542 54.9779 121.44 54.8687 118.399 55.9551C115.356 57.0419 112.195 59.3682 109.498 62.46C104.113 68.636 100.341 78.1614 103.283 87.7625L105.195 87.1766ZM125.419 58.5513C128.713 61.6528 128.443 65.7574 126.722 69.775C125.002 73.788 121.944 77.3875 120.293 78.9866L121.684 80.4233C123.454 78.7099 126.702 74.8979 128.56 70.5628C130.416 66.2323 130.993 61.0523 126.79 57.0952L125.419 58.5513ZM120.293 78.9866C119.406 79.8455 117.357 80.811 114.451 81.3935C111.592 81.9667 108.047 82.1391 104.298 81.541C96.8284 80.3489 88.5635 76.1036 83.2617 65.8348L81.4846 66.7523C87.1159 77.6595 95.9721 82.2375 103.983 83.516C107.976 84.1531 111.761 83.9725 114.844 83.3545C117.88 82.7459 120.385 81.6821 121.684 80.4233L120.293 78.9866ZM83.2617 65.8348C81.1605 61.765 80.0831 56.2656 79.5399 51.619C78.9997 46.9978 79 43.3355 79 43H77C77 43.3703 77.0003 47.1197 77.5534 51.8512C78.1035 56.5573 79.2126 62.3518 81.4846 66.7523L83.2617 65.8348ZM140.093 90.9736C142.13 92.7433 143.387 95.3152 143.306 97.9339L145.305 97.9955C145.407 94.7005 143.834 91.575 141.405 89.464L140.093 90.9736Z" fill="white"/>
+            <rect x="1" y="1" width="162" height="41" rx="20.5" fill="#7270FF" stroke="white" stroke-width="2"/>
+            <path d="M34.0455 15.3636H35.4545V23.0682C35.4545 23.8636 35.267 24.5739 34.892 25.1989C34.5208 25.8201 33.9962 26.3106 33.3182 26.6705C32.6402 27.0265 31.8447 27.2045 30.9318 27.2045C30.0189 27.2045 29.2235 27.0265 28.5455 26.6705C27.8674 26.3106 27.3409 25.8201 26.9659 25.1989C26.5947 24.5739 26.4091 23.8636 26.4091 23.0682V15.3636H27.8182V22.9545C27.8182 23.5227 27.9432 24.0284 28.1932 24.4716C28.4432 24.911 28.7992 25.2576 29.2614 25.5114C29.7273 25.7614 30.2841 25.8864 30.9318 25.8864C31.5795 25.8864 32.1364 25.7614 32.6023 25.5114C33.0682 25.2576 33.4242 24.911 33.6705 24.4716C33.9205 24.0284 34.0455 23.5227 34.0455 22.9545V15.3636ZM39.6776 15.3636V27H38.2685V15.3636H39.6776ZM46.4347 14.8182L42.6847 28.75H41.4574L45.2074 14.8182H46.4347ZM55.8423 15.3636H57.2514V23.0682C57.2514 23.8636 57.0639 24.5739 56.6889 25.1989C56.3177 25.8201 55.7931 26.3106 55.1151 26.6705C54.437 27.0265 53.6416 27.2045 52.7287 27.2045C51.8158 27.2045 51.0204 27.0265 50.3423 26.6705C49.6643 26.3106 49.1378 25.8201 48.7628 25.1989C48.3916 24.5739 48.206 23.8636 48.206 23.0682V15.3636H49.6151V22.9545C49.6151 23.5227 49.7401 24.0284 49.9901 24.4716C50.2401 24.911 50.5961 25.2576 51.0582 25.5114C51.5241 25.7614 52.081 25.8864 52.7287 25.8864C53.3764 25.8864 53.9332 25.7614 54.3991 25.5114C54.8651 25.2576 55.2211 24.911 55.4673 24.4716C55.7173 24.0284 55.8423 23.5227 55.8423 22.9545V15.3636ZM60.7472 15.3636L63.7472 20.2045H63.8381L66.8381 15.3636H68.4972L64.8381 21.1818L68.4972 27H66.8381L63.8381 22.25H63.7472L60.7472 27H59.0881L62.8381 21.1818L59.0881 15.3636H60.7472ZM77.9446 27.1818C77.2173 27.1818 76.5753 26.9981 76.0185 26.6307C75.4616 26.2595 75.026 25.7367 74.7116 25.0625C74.3973 24.3845 74.2401 23.5833 74.2401 22.6591C74.2401 21.7424 74.3973 20.947 74.7116 20.2727C75.026 19.5985 75.4635 19.0777 76.0241 18.7102C76.5848 18.3428 77.2325 18.1591 77.9673 18.1591C78.5355 18.1591 78.9844 18.2538 79.3139 18.4432C79.6473 18.6288 79.901 18.8409 80.0753 19.0795C80.2533 19.3144 80.3916 19.5076 80.4901 19.6591H80.6037V15.3636H81.9446V27H80.6491V25.6591H80.4901C80.3916 25.8182 80.2514 26.0189 80.0696 26.2614C79.8878 26.5 79.6283 26.714 79.2912 26.9034C78.9541 27.089 78.5052 27.1818 77.9446 27.1818ZM78.1264 25.9773C78.6643 25.9773 79.1188 25.8371 79.4901 25.5568C79.8613 25.2727 80.1435 24.8807 80.3366 24.3807C80.5298 23.8769 80.6264 23.2955 80.6264 22.6364C80.6264 21.9848 80.5317 21.4148 80.3423 20.9261C80.1529 20.4337 79.8726 20.0511 79.5014 19.7784C79.1302 19.5019 78.6719 19.3636 78.1264 19.3636C77.5582 19.3636 77.0848 19.5095 76.706 19.8011C76.331 20.089 76.0488 20.4811 75.8594 20.9773C75.6738 21.4697 75.581 22.0227 75.581 22.6364C75.581 23.2576 75.6757 23.822 75.8651 24.3295C76.0582 24.8333 76.3423 25.2348 76.7173 25.5341C77.0961 25.8295 77.5658 25.9773 78.1264 25.9773ZM88.2457 27.1818C87.4048 27.1818 86.6795 26.9962 86.0696 26.625C85.4635 26.25 84.9957 25.7273 84.6662 25.0568C84.3404 24.3826 84.1776 23.5985 84.1776 22.7045C84.1776 21.8106 84.3404 21.0227 84.6662 20.3409C84.9957 19.6553 85.4541 19.1212 86.0412 18.7386C86.6321 18.3523 87.3215 18.1591 88.1094 18.1591C88.5639 18.1591 89.0128 18.2348 89.456 18.3864C89.8991 18.5379 90.3026 18.7841 90.6662 19.125C91.0298 19.4621 91.3196 19.9091 91.5355 20.4659C91.7514 21.0227 91.8594 21.7083 91.8594 22.5227V23.0909H85.1321V21.9318H90.4957C90.4957 21.4394 90.3973 21 90.2003 20.6136C90.0071 20.2273 89.7306 19.9223 89.3707 19.6989C89.0147 19.4754 88.5942 19.3636 88.1094 19.3636C87.5753 19.3636 87.1132 19.4962 86.723 19.7614C86.3366 20.0227 86.0393 20.3636 85.831 20.7841C85.6226 21.2045 85.5185 21.6553 85.5185 22.1364V22.9091C85.5185 23.5682 85.6321 24.1269 85.8594 24.5852C86.0904 25.0398 86.4105 25.3864 86.8196 25.625C87.2287 25.8598 87.7041 25.9773 88.2457 25.9773C88.598 25.9773 88.9162 25.928 89.2003 25.8295C89.4882 25.7273 89.7363 25.5758 89.9446 25.375C90.1529 25.1705 90.3139 24.9167 90.4276 24.6136L91.723 24.9773C91.5866 25.4167 91.3575 25.803 91.0355 26.1364C90.7135 26.4659 90.3158 26.7235 89.8423 26.9091C89.3688 27.0909 88.8366 27.1818 88.2457 27.1818ZM100.081 20.2273L98.8764 20.5682C98.8007 20.3674 98.6889 20.1723 98.5412 19.983C98.3973 19.7898 98.2003 19.6307 97.9503 19.5057C97.7003 19.3807 97.3802 19.3182 96.9901 19.3182C96.456 19.3182 96.0109 19.4413 95.6548 19.6875C95.3026 19.9299 95.1264 20.2386 95.1264 20.6136C95.1264 20.947 95.2476 21.2102 95.4901 21.4034C95.7325 21.5966 96.1113 21.7576 96.6264 21.8864L97.9219 22.2045C98.7022 22.3939 99.2836 22.6837 99.6662 23.0739C100.049 23.4602 100.24 23.9583 100.24 24.5682C100.24 25.0682 100.096 25.5152 99.8082 25.9091C99.5241 26.303 99.1264 26.6136 98.6151 26.8409C98.1037 27.0682 97.509 27.1818 96.831 27.1818C95.9408 27.1818 95.2041 26.9886 94.6207 26.6023C94.0374 26.2159 93.6681 25.6515 93.5128 24.9091L94.7855 24.5909C94.9067 25.0606 95.1359 25.4129 95.473 25.6477C95.8139 25.8826 96.259 26 96.8082 26C97.4332 26 97.9295 25.8674 98.2969 25.6023C98.6681 25.3333 98.8537 25.0114 98.8537 24.6364C98.8537 24.3333 98.7476 24.0795 98.5355 23.875C98.3234 23.6667 97.9976 23.5114 97.5582 23.4091L96.1037 23.0682C95.3045 22.8788 94.7173 22.5852 94.3423 22.1875C93.9711 21.786 93.7855 21.2841 93.7855 20.6818C93.7855 20.1894 93.9238 19.7538 94.2003 19.375C94.4806 18.9962 94.8613 18.6989 95.3423 18.483C95.8272 18.267 96.3764 18.1591 96.9901 18.1591C97.8537 18.1591 98.5317 18.3485 99.0241 18.7273C99.5204 19.1061 99.8726 19.6061 100.081 20.2273ZM102.259 27V18.2727H103.599V27H102.259ZM102.94 16.8182C102.679 16.8182 102.454 16.7292 102.264 16.5511C102.079 16.3731 101.986 16.1591 101.986 15.9091C101.986 15.6591 102.079 15.4451 102.264 15.267C102.454 15.089 102.679 15 102.94 15C103.202 15 103.425 15.089 103.611 15.267C103.8 15.4451 103.895 15.6591 103.895 15.9091C103.895 16.1591 103.8 16.3731 103.611 16.5511C103.425 16.7292 103.202 16.8182 102.94 16.8182ZM109.578 30.4545C108.93 30.4545 108.374 30.3712 107.908 30.2045C107.442 30.0417 107.054 29.8258 106.743 29.5568C106.436 29.2917 106.192 29.0076 106.01 28.7045L107.078 27.9545C107.199 28.1136 107.353 28.2955 107.538 28.5C107.724 28.7083 107.978 28.8883 108.3 29.0398C108.625 29.1951 109.052 29.2727 109.578 29.2727C110.283 29.2727 110.864 29.1023 111.322 28.7614C111.781 28.4205 112.01 27.8864 112.01 27.1591V25.3864H111.896C111.798 25.5455 111.658 25.7424 111.476 25.9773C111.298 26.2083 111.04 26.4148 110.703 26.5966C110.37 26.7746 109.919 26.8636 109.351 26.8636C108.646 26.8636 108.014 26.697 107.453 26.3636C106.896 26.0303 106.455 25.5455 106.129 24.9091C105.807 24.2727 105.646 23.5 105.646 22.5909C105.646 21.697 105.804 20.9186 106.118 20.2557C106.432 19.589 106.87 19.0739 107.43 18.7102C107.991 18.3428 108.639 18.1591 109.374 18.1591C109.942 18.1591 110.393 18.2538 110.726 18.4432C111.063 18.6288 111.321 18.8409 111.499 19.0795C111.68 19.3144 111.821 19.5076 111.919 19.6591H112.055V18.2727H113.351V27.25C113.351 28 113.18 28.6098 112.839 29.0795C112.502 29.553 112.048 29.8996 111.476 30.1193C110.908 30.3428 110.275 30.4545 109.578 30.4545ZM109.533 25.6591C110.071 25.6591 110.525 25.536 110.896 25.2898C111.268 25.0436 111.55 24.6894 111.743 24.2273C111.936 23.7652 112.033 23.2121 112.033 22.5682C112.033 21.9394 111.938 21.3845 111.749 20.9034C111.559 20.4223 111.279 20.0455 110.908 19.7727C110.536 19.5 110.078 19.3636 109.533 19.3636C108.964 19.3636 108.491 19.5076 108.112 19.7955C107.737 20.0833 107.455 20.4697 107.266 20.9545C107.08 21.4394 106.987 21.9773 106.987 22.5682C106.987 23.1742 107.082 23.7102 107.271 24.1761C107.464 24.6383 107.749 25.0019 108.124 25.267C108.502 25.5284 108.972 25.6591 109.533 25.6591ZM117.146 21.75V27H115.805V18.2727H117.101V19.6364H117.214C117.419 19.1932 117.73 18.8371 118.146 18.5682C118.563 18.2955 119.101 18.1591 119.76 18.1591C120.351 18.1591 120.868 18.2803 121.311 18.5227C121.754 18.7614 122.099 19.125 122.345 19.6136C122.591 20.0985 122.714 20.7121 122.714 21.4545V27H121.374V21.5455C121.374 20.8598 121.196 20.3258 120.839 19.9432C120.483 19.5568 119.995 19.3636 119.374 19.3636C118.946 19.3636 118.563 19.4564 118.226 19.642C117.893 19.8277 117.629 20.0985 117.436 20.4545C117.243 20.8106 117.146 21.2424 117.146 21.75ZM128.824 27.1818C127.983 27.1818 127.258 26.9962 126.648 26.625C126.042 26.25 125.574 25.7273 125.244 25.0568C124.919 24.3826 124.756 23.5985 124.756 22.7045C124.756 21.8106 124.919 21.0227 125.244 20.3409C125.574 19.6553 126.032 19.1212 126.619 18.7386C127.21 18.3523 127.9 18.1591 128.688 18.1591C129.142 18.1591 129.591 18.2348 130.034 18.3864C130.477 18.5379 130.881 18.7841 131.244 19.125C131.608 19.4621 131.898 19.9091 132.114 20.4659C132.33 21.0227 132.438 21.7083 132.438 22.5227V23.0909H125.71V21.9318H131.074C131.074 21.4394 130.975 21 130.778 20.6136C130.585 20.2273 130.309 19.9223 129.949 19.6989C129.593 19.4754 129.172 19.3636 128.688 19.3636C128.153 19.3636 127.691 19.4962 127.301 19.7614C126.915 20.0227 126.617 20.3636 126.409 20.7841C126.201 21.2045 126.097 21.6553 126.097 22.1364V22.9091C126.097 23.5682 126.21 24.1269 126.438 24.5852C126.669 25.0398 126.989 25.3864 127.398 25.625C127.807 25.8598 128.282 25.9773 128.824 25.9773C129.176 25.9773 129.494 25.928 129.778 25.8295C130.066 25.7273 130.314 25.5758 130.523 25.375C130.731 25.1705 130.892 24.9167 131.006 24.6136L132.301 24.9773C132.165 25.4167 131.936 25.803 131.614 26.1364C131.292 26.4659 130.894 26.7235 130.42 26.9091C129.947 27.0909 129.415 27.1818 128.824 27.1818ZM134.477 27V18.2727H135.773V19.5909H135.864C136.023 19.1591 136.311 18.8087 136.727 18.5398C137.144 18.2708 137.614 18.1364 138.136 18.1364C138.235 18.1364 138.358 18.1383 138.506 18.142C138.653 18.1458 138.765 18.1515 138.841 18.1591V19.5227C138.795 19.5114 138.691 19.4943 138.528 19.4716C138.369 19.4451 138.201 19.4318 138.023 19.4318C137.598 19.4318 137.22 19.5208 136.886 19.6989C136.557 19.8731 136.295 20.1155 136.102 20.4261C135.913 20.733 135.818 21.0833 135.818 21.4773V27H134.477Z" fill="white"/>
+        </svg>
+            
+        <svg class="label-mbti" width="150" height="123" viewBox="0 0 150 123" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M-0.000150882 118.374L8.47124 112.282L9.51083 122.664L-0.000150882 118.374ZM20.6251 115.184L20.8294 116.065L20.6251 115.184ZM37.5003 105.617L36.8448 104.995L36.8448 104.995L37.5003 105.617ZM39.3753 84.5686L40.1506 84.1043L40.1506 84.1043L39.3753 84.5686ZM27.5002 96.0496L28.0085 95.3025L27.5002 96.0496ZM47.0314 72.0226L46.4365 72.7027L46.4365 72.7027L47.0314 72.0226ZM85.6635 59.9038L86.448 60.3523L85.6635 59.9038ZM27.3075 81.488L27.8622 82.2013L27.3075 81.488ZM23.7145 88.752L22.8123 88.8029L23.7145 88.752ZM7.95707 116.67C12.2731 116.019 17.0525 115.086 20.4208 114.304L20.8294 116.065C17.4155 116.857 12.5897 117.799 8.22642 118.457L7.95707 116.67ZM20.4208 114.304C28.4573 112.439 33.3081 108.722 36.8448 104.995L38.1558 106.239C34.4291 110.166 29.2798 114.103 20.8294 116.065L20.4208 114.304ZM36.8448 104.995C37.5991 104.2 39.6716 101.93 40.7414 98.5089C41.799 95.1269 41.9013 90.5457 38.6001 85.0328L40.1506 84.1043C43.7244 90.0724 43.6731 95.1893 42.4663 99.0483C41.2718 102.868 38.9693 105.382 38.1558 106.239L36.8448 104.995ZM38.6001 85.0328C36.6717 81.8125 34.6912 80.6408 32.9606 80.4355C31.1919 80.2258 29.4185 80.9909 27.8622 82.2013L26.7527 80.7747C28.4995 79.4161 30.7425 78.3526 33.1734 78.6409C35.6422 78.9337 38.0441 80.5867 40.1506 84.1043L38.6001 85.0328ZM24.6167 88.7011C24.7768 91.5378 26.2003 94.0723 28.0085 95.3025L26.9919 96.7967C24.654 95.2062 22.9994 92.1179 22.8123 88.8029L24.6167 88.7011ZM28.0085 95.3025C28.2872 95.4921 28.9319 95.7068 30.0112 95.834C31.051 95.9565 32.3771 95.9856 33.9096 95.8979C36.973 95.7227 40.7903 95.0849 44.6686 93.8582C52.4727 91.39 60.2593 86.6295 62.9325 78.7485L64.644 79.3291C61.6921 88.0317 53.2097 93.0523 45.2136 95.5813C41.1918 96.8534 37.2261 97.5184 34.0128 97.7022C32.407 97.7941 30.9713 97.7669 29.7996 97.6288C28.6673 97.4953 27.6507 97.2449 26.9919 96.7967L28.0085 95.3025ZM62.9325 78.7485C65.5999 70.8846 62.2129 62.9337 57.1225 57.6613C54.5841 55.0323 51.6791 53.1344 49.0086 52.2728C46.3261 51.4073 44.0418 51.6257 42.4984 52.9383L41.3276 51.5616C43.5342 49.685 46.5624 49.5846 49.5636 50.5528C52.5767 51.525 55.7265 53.6135 58.4226 56.406C63.8011 61.9768 67.6016 70.6094 64.644 79.3291L62.9325 78.7485ZM42.4984 52.9383C40.8052 54.3782 40.09 56.0009 39.9687 57.6747C39.8449 59.3822 40.3362 61.2127 41.1928 63.0184C42.9105 66.6389 45.9687 69.8926 47.6263 71.3425L46.4365 72.7027C44.6721 71.1594 41.4211 67.7158 39.56 63.793C38.6273 61.8269 38.0118 59.6741 38.1662 57.544C38.323 55.3801 39.2707 53.3109 41.3276 51.5616L42.4984 52.9383ZM47.6263 71.3425C48.5324 72.1351 50.6116 73.0157 53.5363 73.5453C56.4166 74.0668 59.9856 74.2233 63.7575 73.6796C71.2899 72.5939 79.5775 68.7302 84.879 59.4554L86.448 60.3523C80.8118 70.2125 71.9709 74.3216 64.0154 75.4683C60.0434 76.0408 56.2786 75.8784 53.2143 75.3236C50.1943 74.7768 47.7179 73.8237 46.4365 72.7027L47.6263 71.3425ZM84.879 59.4554C86.9767 55.7857 88.0528 50.8264 88.5956 46.6327C89.1353 42.462 89.135 39.1569 89.135 38.8555H90.9422C90.9422 39.1918 90.9418 42.584 90.3878 46.8646C89.8368 51.1221 88.7254 56.3681 86.448 60.3523L84.879 59.4554ZM27.8622 82.2013C25.8057 83.8007 24.4772 86.2283 24.6167 88.7011L22.8123 88.8029C22.6325 85.6148 24.3337 82.6561 26.7527 80.7747L27.8622 82.2013Z" fill="white"/>
+            <rect x="-0.903614" y="0.903614" width="118.373" height="37.0482" rx="18.5241" transform="matrix(-1 0 0 1 148.193 0)" fill="#7270FF" stroke="white" stroke-width="1.80723"/>
+            <path d="M54.9562 14.3285V24.8433H53.6829V14.3285H54.9562ZM65.8471 14.3285V24.8433H64.6149L58.8851 16.5875H58.7825V24.8433H57.5092V14.3285H58.7414L64.4917 22.6048H64.5943V14.3285H65.8471ZM68.3949 24.8433V14.3285H74.6997V15.458H69.6682V19.0108H74.2273V20.1404H69.6682V24.8433H68.3949ZM79.9173 14.3285H81.1906V21.8449C81.1906 22.5158 81.0673 23.0857 80.8209 23.5546C80.5745 24.0235 80.227 24.3795 79.7787 24.6225C79.3303 24.8655 78.8015 24.987 78.1922 24.987C77.6172 24.987 77.1055 24.8826 76.6571 24.6738C76.2087 24.4616 75.8562 24.1604 75.5994 23.7702C75.3427 23.38 75.2144 22.9162 75.2144 22.3789H76.4671C76.4671 22.6766 76.5407 22.9368 76.6879 23.1593C76.8385 23.3783 77.0439 23.5495 77.304 23.6727C77.5641 23.7959 77.8602 23.8575 78.1922 23.8575C78.5584 23.8575 78.8699 23.7805 79.1266 23.6265C79.3833 23.4724 79.5784 23.2465 79.7119 22.9488C79.8488 22.6475 79.9173 22.2796 79.9173 21.8449V14.3285ZM91.3614 13.8356L87.9728 26.4246H86.8638L90.2524 13.8356H91.3614ZM98.3015 14.3285V24.8433H97.0282V14.3285H98.3015ZM109.192 14.3285V24.8433H107.96L102.23 16.5875H102.128V24.8433H100.854V14.3285H102.087L107.837 22.6048H107.94V14.3285H109.192ZM111.74 24.8433V14.3285H118.045V15.458H113.013V19.0108H117.573V20.1404H113.013V24.8433H111.74ZM120.226 24.8433V14.3285H123.779C124.603 14.3285 125.278 14.4774 125.801 14.7751C126.328 15.0695 126.719 15.4683 126.972 15.9714C127.225 16.4746 127.352 17.0359 127.352 17.6554C127.352 18.2749 127.225 18.838 126.972 19.3446C126.722 19.8511 126.335 20.255 125.812 20.5562C125.288 20.854 124.617 21.0029 123.799 21.0029H121.253V19.8734H123.758C124.323 19.8734 124.776 19.7758 125.119 19.5807C125.461 19.3856 125.709 19.1221 125.863 18.7901C126.02 18.4546 126.099 18.0764 126.099 17.6554C126.099 17.2344 126.02 16.8579 125.863 16.5259C125.709 16.1939 125.459 15.9338 125.113 15.7455C124.768 15.5538 124.309 15.458 123.737 15.458H121.499V24.8433H120.226Z" fill="white"/>
+        </svg>
+            
+            
+            
+
+            
+            
+
+          
+        <div class="about-content">
+            <h3>Welcome to my channel!</h3>
+            <p>Hello! This is Yanjie Zhang's personal homepage, 
+                where I have recorded my personal details,
+                 including education experience, skills,
+                  and my personal design work and project experience, etc. 
+                  Welcome to criticize and correct my visitors!
+                 
+                </p>
+            <div class="btn-box btns">
+                <a href="#" class="btn">Read More</a>
+                
+            </div>
+        </div>
+    </section>
+    <!-- education section design -->
+    <section class="education" id="education">
+        <h2 class="heading">My<span> Award</span></h2>
+        <div class="education-row" style="display: flex; flex-direction: row;">
+            <div class="education-column">
+                <h3 class="title">Education</h3>
+                <div class="education-box">
+                    <div class="education-content">
+                        <div class="content">
+                            <div class="year"><i class='bx bxs-calendar'></i>2017-2018</div>
+                            <h3>Master Degree - University</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                Iusto esse, possimus nihil, omnis voluptatibus ad illum
+                                 veniam ut aliquid id mollitia officia quibusdam fugiat,
+                                  eum aspernatur quod at enim nostrum.</p>
+                        </div>
+                    </div>
+
+                    <div class="education-content">
+                        <div class="content">
+                            <div class="year"><i class='bx bxs-calendar'></i>2017-2018</div>
+                            <h3>Master Degree - University</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                Iusto esse, possimus nihil, omnis voluptatibus ad illum
+                                 veniam ut aliquid id mollitia officia quibusdam fugiat,
+                                  eum aspernatur quod at enim nostrum.</p>
+                        </div>
+                    </div>
+
+                    <div class="education-content">
+                        <div class="content">
+                            <div class="year"><i class='bx bxs-calendar'></i>2017-2018</div>
+                            <h3>Master Degree - University</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                Iusto esse, possimus nihil, omnis voluptatibus ad illum
+                                 veniam ut aliquid id mollitia officia quibusdam fugiat,
+                                  eum aspernatur quod at enim nostrum.</p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+
+            <div class="education-column">
+                <h3 class="title">Experience</h3>
+                <div class="education-box">
+                    <div class="education-content">
+                        <div class="content">
+                            <div class="year"><i class='bx bxs-calendar'></i>2017-2018</div>
+                            <h3>UXDA User Experience - Competition</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                Iusto esse, possimus nihil, omnis voluptatibus ad illum
+                                 veniam ut aliquid id mollitia officia quibusdam fugiat,
+                                  eum aspernatur quod at enim nostrum.</p>
+                        </div>
+                    </div>
+
+                    <div class="education-content">
+                        <div class="content">
+                            <div class="year"><i class='bx bxs-calendar'></i>2017-2018</div>
+                            <h3>Web Developer - Competition</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                Iusto esse, possimus nihil, omnis voluptatibus ad illum
+                                 veniam ut aliquid id mollitia officia quibusdam fugiat,
+                                  eum aspernatur quod at enim nostrum.</p>
+                        </div>
+                    </div>
+
+                    <div class="education-content">
+                        <div class="content">
+                            <div class="year"><i class='bx bxs-calendar'></i>2017-2018</div>
+                            <h3>Web Developer - Company</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                Iusto esse, possimus nihil, omnis voluptatibus ad illum
+                                 veniam ut aliquid id mollitia officia quibusdam fugiat,
+                                  eum aspernatur quod at enim nostrum.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- skills section design -->
+    <section class="skills" id="skills">
+        <h2 class="heading">My <span>Skills</span></h2>
+        <div class="skills-row">
+            <div class="skills-column">
+                <h3 class="title">design Skills</h3>
+                <div class="skills-box">
+                    <div class="skills-content">
+                        <div class="progress">
+                            <h3>Figma <span style="color: #fff;">90%</span></h3>
+                            <div class="bar"><span> </span></div>
+                        </div>
+
+                        <div class="progress">
+                            <h3>Photoshop <span style="color: #fff;">88%</span></h3>
+                            <div class="bar"><span> </span></div>
+                        </div>
+
+                        <div class="progress">
+                            <h3>Adobe illustration <span style="color: #fff;">85%</span></h3>
+                            <div class="bar"><span></span></div>
+                        </div>
+
+                        <div class="progress">
+                            <h3>Rhino <span style="color: #fff;">85%</span></h3>
+                            <div class="bar"><span></span></div>
+                        </div>
+
+                        <div class="progress">
+                            <h3>Adobe effect <span style="color: #fff;">80%</span></h3>
+                            <div class="bar"><span></span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skills-column">
+                <h3 class="title">coding Skills</h3>
+
+                <div class="skills-box">
+                    <div class="skills-content">
+                        <div class="progress">
+                            <h3>HTML <span style="color: #fff;">80%</span></h3>
+                            <div class="bar"><span>90</span></div>
+                        </div>
+
+                        <div class="progress">
+                            <h3>CSS <span style="color: #fff;">76%</span></h3>
+                            <div class="bar"><span>80</span></div>
+                        </div>
+
+                        <div class="progress">
+                            <h3>Javascript <span style="color: #fff;">65%</span></h3>
+                            <div class="bar"><span></span></div>
+                        </div>
+
+                        <div class="progress">
+                            <h3>Python <span style="color: #fff;">73%</span></h3>
+                            <div class="bar"><span></span></div>
+                        </div>
+
+                        <div class="progress">
+                            <h3>Processing <span style="color: #fff;">70%</span></h3>
+                            <div class="bar"><span></span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!-- contact section design -->
+    <section class="project" id="project">
+        <!-- <h2 class="heading">My <span>Projects</span></h2> -->
+        <div class="container">
+            <h2 class="main-title">My <span>Projects</span></h2>
+            <div class="content-proj">
+                <div class="image">
+                      <img src="src/tidygo.png" alt="">
+                </div>
+                <div class="text-box">
+                    <div class="small-title">TidyGo Gamified Storage Design</div>
+                    <p style="margin-top: 8px;">Design Description: TidyGo Gamified Storage Design for people with hoarding disorders is a gamified organizing and storage application based on AR glasses, aiming to help hoarders improve their environment and reduce hoarding behaviors. Through it, users can learn and practice organizing skills in a gamified way, and at the same time, through the sharing and donation mechanism, it helps users to reduce unnecessary items and realize the secondary use of items.
+                    </p>
+                </div>
+
+            </div>
+            <div class="media-icons">
+                <a href="#" class="icon"><i class='bx bxl-figma' ></i></a>
+                <a href="#" class="icon"><i class='bx bxl-unity'></i></a>
+                <a href="#" class="icon"><i class='bx bxl-discord-alt'></i></a>
+                <a href="#" class="icon"><i class='bx bxl-visual-studio'></i></a>
+            </div>
+
+        </div>
+
+    </section>
+    <div class="project-15">
+        <div class="container">
+            <div class="content-proj">
+                <div class="media-info">
+                    <li><a href="#" class="icon"><i class='bx bxs-first-aid'></i> intelligentize</a></li>
+                    <li><a href="#" class="icon"><i class='bx bxs-objects-vertical-bottom'></i> visualization</a></li>
+                    <li><a href="#" class="icon"><i class='bx bxs-music'></i> audio-visual</a></li>
+                    <li><a href="#" class="icon"><i class='bx bxs-injection'></i> convienience</a></li>
+                    <li><a href="#" class="icon"><i class='bx bxs-cake'></i> free management</a></li>
+                </div>
+                <div class="image">
+                    <img src="src/img3.png" alt="">
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <section class="project-02">
+        <div class="container">
+            <!-- <h3 class="section-title">33333</h3> -->
+            <div class="content-proj">
+                
+                <div class="image">
+                    <img src="src/fusang.png" alt="">
+                </div>
+                <div class="info">
+                    <div class="small-title">TidyGo AR Gamified Storage Design</div>
+                    <p style="margin-top: 6px;color: rgba(240, 248, 255, 0.65);">
+                        TidyGo is a solution to hoarding syndrome that leverages 
+                        Mixed Reality (MR) technology. It combines AR glasses, mobile applications, 
+                        AI image recognition, deep learning, and gamification elements to 
+                        help users solve hoarding problems in a fun and understandable way.
+                        TidyGo is an AR-based gamified tidying and organizing application, 
+                        aiming to help individuals with hoarding disorder improve their 
+                        environment and reduce hoarding behaviors. Through our application, 
+                        users can learn and practice tidying techniques in a gamified way, 
+                        and with our sharing and donation mechanism, we help users reduce unnecessary items. 
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="project-works">
+        <div class="container">
+            <h2 class="main-title">Mini <span>works</span></h2>
+            <div class="content-proj" style="height: 400px;display: flex;flex-wrap: nowrap;">
+                <input type="radio" name="slide" id="c1" checked>
+                <label for="c1" class="card">
+                    <div class="row">
+                        <div class="icon">1</div>
+                        <div class="description">
+                            <h4>Winter</h4>
+                            <p>winter has so ,
+                                winter has so ,
+                                winter has so
+                                winter has so ,
+                                winter has so ,
+                                winter has so
+                            </p>
+                        </div>
+                    </div>
+                </label>
+
+                <input type="radio" name="slide" id="c2">
+                <label for="c2" class="card">
+                    <div class="row">
+                        <div class="icon">2</div>
+                        <div class="description">
+                            <h4>Winter</h4>
+                            <p>winter has so mush to offer</p>
+                        </div>
+                    </div>
+                </label>
+
+                <input type="radio" name="slide" id="c3">
+                <label for="c3" class="card">
+                    <div class="row">
+                        <div class="icon">3</div>
+                        <div class="description">
+                            <h4>Winter</h4>
+                            <p>winter has so mush to offer</p>
+                        </div>
+                    </div>
+                </label>
+
+                <input type="radio" name="slide" id="c4" >
+                <label for="c4" class="card">
+                    <div class="row">
+                        <div class="icon">4</div>
+                        <div class="description">
+                            <h4>Winter</h4>
+                            <p>winter has so mush to offer</p>
+                        </div>
+                    </div>
+                </label>
+
+                <input type="radio" name="slide" id="c5">
+                <label for="c5" class="card">
+                    <div class="row">
+                        <div class="icon">5</div>
+                        <div class="description">
+                            <h4>Winter</h4>
+                            <p>winter has so mush to offer</p>
+                        </div>
+                    </div>
+                </label>
+            </div>
+
+        </div>
+    </section>
+    
+    <!-- footer design -->
+
+    <footer class="footer">
+        <div class="footer-text">
+            <p>Copyright &copy;2023 by ZHANGYANJIE |All Rights Reserved.</p>
+        </div>
+        <div class="footer-iconTop">
+            <a href="#"><i class='bx bxs-hand-up'></i></a>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+    <script>
+        ScrollReveal({
+            reset: true,
+            distance:'60px',
+            duration:2500,
+            delay:400
+        })
+        ScrollReveal().reveal('.main-title', { delay: 500 ,origin: 'left'});
+        ScrollReveal().reveal('.heading', { delay: 500 ,origin: 'left'});
+        ScrollReveal().reveal('.project .image , .info', { delay: 600 ,origin: 'bottom'});
+        ScrollReveal().reveal('.text-box ,.project-15 .image', { delay: 700 ,origin: 'right'});
+        ScrollReveal().reveal('.project-02 .image', { delay: 500 ,origin: 'top'});
+        ScrollReveal().reveal('.media-icons i', { delay: 500 ,origin: 'bottom',interval:200});
+        ScrollReveal().reveal('.media-info li', { delay: 500 ,origin: 'left',interval:200});
+
+        document.addEventListener("mousemove", function (event) {
+    var glow = document.createElement("div");
+    glow.className = "glow";
+    var glowInner = document.createElement("div");
+    glowInner.className = "glow-inner";
+    glow.appendChild(glowInner);
+    document.body.appendChild(glow);
+    glow.style.left = event.clientX + "px";
+    glow.style.top = event.clientY + "px";
+    setTimeout(function () {
+        glow.remove();
+    }, 2000);
+});
+
+
+//toggle icon navbar
+let menuIcon = document.querySelector("#menu-icon");
+let navbar = document.querySelector('.navbar');
+
+menuIcon.addEventListener('click', () =>{
+    menuIcon.classList.toggle('bx-x');
+    navbar.classList.toggle('active');
+});
+
+//scroll sections
+let sections = document.querySelectorAll('section');
+let navLinks = document.querySelectorAll('header nav a');
+
+window.onscroll =()=>{
+    sections.forEach(sec => {
+        let top = window.scrollY;
+        let offset = sec.offsetTop - 100;
+        let height = sec.offsetHeight;
+        let id = sec.getAttribute('id');
+
+        if(top >= offset && top < offset + height) {
+            // Active navbar links
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                document.querySelector('header nav a[href*=' + id + ']').classList.add('active');
+            });
+            // active sections for animation on scroll
+            sec.classList.add('show-animate');
+        }
+        // if want to use animation that repeats on scroll use this
+        else{
+            sec.classList.remove('show-animate');
+        }
+
+    
+    });
+
+    //sticky header
+    let header=document.querySelector('header');
+
+    header.classList.toggle('sticky',window.scrollY > 100);
+
+
+    menuIcon.classList.remove('bx-x');
+    navbar.classList.remove('active');
+
+}
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
