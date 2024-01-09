@@ -774,7 +774,9 @@ span{
     width: 50%;
 }
 
-
+.project-15 .container .content-proj li{
+    width: 300px;
+}
 
 .logo .animate,
 .navbar .animate,
@@ -811,6 +813,10 @@ span{
     html{
         font-size: 55%;
     }
+    .about .label-me{
+        left: 20%;
+        scale: 90%;
+    }
     
 }
 @media(max-width:991px){
@@ -827,6 +833,63 @@ span{
     .footer{
         padding:2rem 4%;
     }
+    .about .label-me{
+        left: 15%;
+        scale: 85%;
+    }
+    .about .about-svg3{
+        top:1230px;
+        left: 70%;
+    }
+    .about .about-svg2{
+        top: 1010px;
+        left: 75%;
+    }
+    .about .about-svg1{
+        top:1220px;
+        left:30%;
+    }
+    .project-15 .container .content-proj .media-info{
+        font-size: 7px;
+        margin-top: 30px;
+    }
+    .project-15 .container .content-proj li{
+        width: 240px;
+        margin-bottom: 42px;
+    }
+    
+    
+    .media-info li:nth-child(1),
+    .media-info li:nth-child(5) {
+        padding-left: 70px;
+    }
+    .media-info li:nth-child(2),
+    .media-info li:nth-child(4) {
+        padding-left: 20px;
+    }
+    
+    
+}
+@media(max-width:880px){
+    .project-15 .container .content-proj .media-info{
+        font-size: 6px;
+        margin-top: 40px;
+    }
+    .project-15 .container .content-proj li{
+        width: 240px;
+        margin-bottom: 42px;
+    }
+  
+    
+    .media-info li:nth-child(1),
+    .media-info li:nth-child(5) {
+        padding-left: 50px;
+    }
+    .media-info li:nth-child(2),
+    .media-info li:nth-child(4) {
+        padding-left: 20px;
+    }
+    
 }
 
 @media(max-width:768px){
@@ -889,6 +952,67 @@ span{
         background: var(--bg-color);
         opacity:.6;
     }
+    .about .label-me{
+        left: 5%;
+        scale: 80%;
+    }
+    .about .label-mbti{
+        left: 65%;
+        scale: 90%;
+
+    }
+    .about .about-svg3{
+        top:1230px;
+        left: 80%;
+    }
+    .about .about-svg2{
+        top: 1010px;
+        left: 65%;
+    }
+    .about .about-svg1{
+        top:1180px;
+        left:20%;
+    }
+    .project-15 .container .content-proj .media-info{
+        font-size: 6px;
+        margin-top: 25px;
+    }
+    .project-15 .container .content-proj li{
+        width: 240px;
+        margin-bottom: 30px;
+    }
+    .project-15 .container .content-proj .image{
+        padding-left: 0px;
+    }
+
+    .media-info li:nth-child(1),
+    .media-info li:nth-child(5) {
+        padding-left: 20px;
+    }
+    .media-info li:nth-child(2),
+    .media-info li:nth-child(4) {
+        padding-left: 20px;
+    }
+}
+@media(max-width:680px){
+    .project-15 .container .content-proj .media-info{
+        font-size: 5px;
+        margin-top: 25px;
+    }
+    .project-15 .container .content-proj li{
+        width: 240px;
+        margin-bottom: 20px;
+    }
+   
+    
+    .media-info li:nth-child(1),
+    .media-info li:nth-child(5) {
+        padding-left: 100px;
+    }
+    .media-info li:nth-child(2),
+    .media-info li:nth-child(4) {
+        padding-left: 50px;
+    }
 }
 
 @media(max-width:520px){
@@ -906,6 +1030,27 @@ span{
     .home-sci a{
         width: 38px;
         height: 38px;
+    }
+    .about .label-me{
+        left: 2%;
+        scale: 75%;
+    }
+    .about .label-mbti{
+        left: 65%;
+        scale: 75%;
+
+    }
+    .about .about-svg3{
+        top:1230px;
+        left: 80%;
+    }
+    .about .about-svg2{
+        top: 1010px;
+        left: 65%;
+    }
+    .about .about-svg1{
+        top:1180px;
+        left:20%;
     }
 }
 
@@ -928,6 +1073,18 @@ span{
         margin-top:2rem;
         text-align: center;
     }
+    .about .label-me{
+        left: 3%;
+        scale: 70%;
+    }
+    .about .label-mbti{
+        left: 65%;
+        scale: 65%;
+
+    }
+    /* .about .svg .star{
+        top:10%;
+    } */
 }
 @media(max-width:371px){
     .home{
@@ -945,6 +1102,16 @@ span{
         font-size: 5rem;
 
     }
+    .about .label-me{
+        left: 0.5%;
+        scale:0.7;
+    }
+    .about .label-mbti{
+        left: 60%;
+        scale: 70%;
+
+    }
+    
 }
 
 /* KEYFRAMS ANIMARION */
@@ -1027,6 +1194,3 @@ span{
     }
 }
 
-
-
-/* ////////////// */
